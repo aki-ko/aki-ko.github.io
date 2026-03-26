@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKI — 아카이브 웹진</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+KR:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─── */
+:root {
+  --bg:         #F5F3EE;
+  --surface:    #EDEAE3;
+  --surface-2:  #E5E2D9;
+  --border:     #D6D2C8;
+  --border-dk:  #B8B4AA;
+  --text:       #1E1E1E;
+  --muted:      #7A7570;
+  --muted-lt:   #9E9994;
+  --accent:     #2D5016;
+  --accent-lt:  #4A7A24;
+  --accent-bg:  #EDF2E8;
+  --white:      #FAFAF7;
+
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-body:    'Noto Serif KR', 'Noto Serif', Georgia, serif;
+  --f-mono:    'DM Mono', 'Courier New', monospace;
+  --f-ui:      'Pretendard', system-ui, sans-serif;
+
+  --radius: 0px;
+  --max-w: 1100px;
+  --col: 680px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ─── LAYOUT ─── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+.container--narrow { max-width: var(--col); margin: 0 auto; padding: 0 32px; }
+
+/* ─── HEADER ─── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.logo {
+  font-family: var(--f-mono);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.logo span {
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-family: var(--f-ui);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.site-nav a:hover { color: var(--text); }
+.site-nav a.active { color: var(--accent); font-weight: 500; }
+.nav-issue-badge {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 2px 8px;
+  letter-spacing: 0.06em;
+}
+
+/* ─── HERO ─── */
+.hero {
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(45,80,22,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(45,80,22,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 64px;
+  align-items: start;
+}
+.hero-meta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero-meta::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+.hero-question-label {
+  font-family: var(--f-ui);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-note {
+  font-family: var(--f-body);
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.btn-primary {
+  font-family: var(--f-ui);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--accent);
+  color: var(--white);
+  padding: 10px 22px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--accent-lt); }
+.btn-ghost {
+  font-family: var(--f-ui);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--text); }
+.btn-ghost::after { content: '→'; font-size: 14px; }
+
+/* Hero Side */
+.hero-side {
+  border-left: 1px solid var(--border);
+  padding-left: 40px;
+}
+.hero-side-label {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--muted-lt);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.issue-stat-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.issue-stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--f-ui);
+  font-size: 13px;
+}
+.issue-stat-item:last-child { border-bottom: none; }
+.stat-key { color: var(--muted); font-size: 12px; }
+.stat-val { color: var(--text); font-weight: 500; font-family: var(--f-mono); font-size: 12px; }
+.stat-val.accent { color: var(--accent); }
+
+/* ─── SECTION ─── */
+.section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-of-type { border-bottom: none; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+.section-title {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-title::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--border-dk);
+}
+.section-link {
+  font-family: var(--f-ui);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+.section-link:hover { color: var(--accent); }
+.section-link::after { content: '→'; }
+
+/* ─── CARDS ─── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+.card {
+  background: var(--bg);
+  padding: 28px;
+  transition: background 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+.card:hover { background: var(--surface); }
+.card-num {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted-lt);
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+.card-category {
+  display: inline-block;
+  font-family: var(--f-ui);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 2px 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.card-title {
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.card-excerpt {
+  font-family: var(--f-body);
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-author {
+  font-family: var(--f-ui);
+  font-size: 12px;
+  color: var(--muted);
+}
+.card-meta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted-lt);
+  letter-spacing: 0.04em;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+/* ─── TAGS ─── */
+.tag {
+  font-family: var(--f-ui);
+  font-size: 11px;
+  color: var(--muted);
+  border: 1px solid var(--border-dk);
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tag:hover, .tag.active {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+/* ─── PEOPLE STRIP ─── */
+.people-strip {
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.person-card {
+  flex: 1;
+  background: var(--bg);
+  padding: 24px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.person-card:hover { background: var(--surface); }
+.person-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+.person-name {
+  font-family: var(--f-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.person-role {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.person-bio {
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ─── VAULT ─── */
+.vault-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+.vault-item {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  background: var(--bg);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.vault-item:hover { background: var(--surface); }
+.vault-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.vault-title {
+  font-family: var(--f-ui);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.vault-meta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted-lt);
+  letter-spacing: 0.04em;
+}
+.vault-download {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  border: 1px solid var(--accent);
+  padding: 4px 10px;
+  transition: all 0.15s;
+}
+.vault-download:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* ─── ARCHIVE ─── */
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+.archive-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.archive-row:last-child { border-bottom: none; }
+.archive-row:hover { background: var(--surface); }
+.archive-num {
+  font-family: var(--f-mono);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--border-dk);
+  letter-spacing: -0.02em;
+}
+.archive-question {
+  font-family: var(--f-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.archive-info {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  display: flex;
+  gap: 16px;
+}
+.archive-date {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted-lt);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* ─── ARTICLE VIEW ─── */
+.article-view { display: none; }
+.article-view.active { display: block; }
+.article-meta-bar {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  margin-bottom: 48px;
+}
+.article-meta-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.article-meta-sep { color: var(--border-dk); }
+.article-meta-cat { color: var(--accent); font-weight: 500; text-transform: uppercase; }
+.article-title {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+.article-summary {
+  font-family: var(--f-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.7;
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+.article-body h2 {
+  font-family: var(--f-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text);
+  margin: 40px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.article-body p {
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.article-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  background: var(--accent-bg);
+  margin: 32px 0;
+  font-family: var(--f-display);
+  font-size: 19px;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1.6;
+}
+.article-body .related-link {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+/* ─── PAGE SWITCHER ─── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ─── SEARCH ─── */
+.search-bar {
+  border: 1px solid var(--border);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--f-ui);
+  font-size: 14px;
+  color: var(--text);
+  padding: 14px 0;
+  outline: none;
+}
+.search-bar input::placeholder { color: var(--muted-lt); }
+.search-bar span { color: var(--muted-lt); font-size: 16px; }
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+.filter-label {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: var(--muted-lt);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+/* ─── LIST VIEW ─── */
+.list-view {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+.list-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.list-item:last-child { border-bottom: none; }
+.list-item:hover { background: var(--surface); }
+.list-item-title {
+  font-family: var(--f-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.list-item-summary {
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.list-item-meta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted-lt);
+  letter-spacing: 0.04em;
+}
+
+/* ─── ABOUT ─── */
+.about-hero {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+.about-title {
+  font-family: var(--f-display);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+.about-desc {
+  font-family: var(--f-body);
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 560px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border: 1px solid var(--border);
+  background: var(--border);
+  margin-top: 32px;
+}
+.about-cell {
+  background: var(--bg);
+  padding: 28px;
+}
+.about-cell-title {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.about-cell-text {
+  font-family: var(--f-body);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 80px;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.footer-logo {
+  font-family: var(--f-mono);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.footer-meta {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--muted-lt);
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  font-family: var(--f-ui);
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer-nav a:hover { color: var(--accent); }
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+  .container, .container--narrow { padding: 0 20px; }
+  .header-inner { padding: 0 20px; }
+  .site-nav { gap: 16px; }
+  .site-nav a:not(.nav-issue-badge):nth-child(n+4) { display: none; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-side { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 32px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .people-strip { flex-direction: column; }
+  .archive-row { grid-template-columns: 60px 1fr; }
+  .archive-date { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-nav { justify-content: center; }
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease both; }
+.fade-up-delay-1 { animation-delay: 0.08s; }
+.fade-up-delay-2 { animation-delay: 0.16s; }
+.fade-up-delay-3 { animation-delay: 0.24s; }
+
+/* ─── TOOLTIP ─── */
+.page-title {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.page-subtitle {
+  font-family: var(--f-body);
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.page-header {
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+</style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo" onclick="showPage('home')" style="cursor:pointer">AKI <span>아카이브 웹진</span></div>
+    <nav class="site-nav">
+      <a href="#" onclick="showPage('prompt')" id="nav-prompt">프롬프트</a>
+      <a href="#" onclick="showPage('text')" id="nav-text">텍스트</a>
+      <a href="#" onclick="showPage('people')" id="nav-people">사람</a>
+      <a href="#" onclick="showPage('vault')" id="nav-vault">보관함</a>
+      <a href="#" onclick="showPage('archive')" id="nav-archive">아카이브</a>
+      <a href="#" onclick="showPage('about')" id="nav-about">소개</a>
+      <a href="#" onclick="showPage('search')" class="nav-issue-badge">탐색</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════ HOME ══════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-meta fade-up">Issue 01 &nbsp;·&nbsp; 2025.03</div>
+        <div class="hero-question-label fade-up fade-up-delay-1">이번 호의 질문</div>
+        <h1 class="hero-title fade-up fade-up-delay-1">
+          우리는 무엇을<br><em>기억하기로</em> 선택하는가
+        </h1>
+        <p class="hero-note fade-up fade-up-delay-2">
+          AKI 첫 호는 기억에 관한 질문에서 시작합니다. 무엇이 기록되고, 무엇이 잊히는가. 선택되는 기억은 어떤 형태를 갖는가. 이 호의 글들은 하나의 질문 주위를 각기 다른 거리에서 맴돌고 있습니다.
+        </p>
+        <div class="hero-actions fade-up fade-up-delay-3">
+          <button class="btn-primary" onclick="showPage('prompt')">이번 호 읽기</button>
+          <a class="btn-ghost" onclick="showPage('text')">텍스트 전체</a>
+        </div>
+      </div>
+      <div class="hero-side fade-up fade-up-delay-2">
+        <div class="hero-side-label">이번 호 현황</div>
+        <ul class="issue-stat-list">
+          <li class="issue-stat-item">
+            <span class="stat-key">텍스트</span>
+            <span class="stat-val accent">4편</span>
+          </li>
+          <li class="issue-stat-item">
+            <span class="stat-key">참여자</span>
+            <span class="stat-val">3명</span>
+          </li>
+          <li class="issue-stat-item">
+            <span class="stat-key">보관 자료</span>
+            <span class="stat-val">3개</span>
+          </li>
+          <li class="issue-stat-item">
+            <span class="stat-key">태그</span>
+            <span class="stat-val">#기억 #공간 #기록 외 4</span>
+          </li>
+          <li class="issue-stat-item">
+            <span class="stat-key">발행일</span>
+            <span class="stat-val">2025.03.01</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXTS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">텍스트</h2>
+        <a class="section-link" onclick="showPage('text')">전체 보기</a>
+      </div>
+      <div class="card-grid">
+        <article class="card" onclick="showArticle()">
+          <div class="card-num">01 — 01</div>
+          <div class="card-category">에세이</div>
+          <h3 class="card-title">기억은 장소에 붙는다</h3>
+          <p class="card-excerpt">우리가 기억이라고 부르는 것들은 대부분 장소와 결부되어 있다. 어떤 방, 어떤 계단, 어떤 냄새. 장소가 사라지면 기억도 희미해진다.</p>
+          <div class="card-tags">
+            <span class="tag">#기억</span>
+            <span class="tag">#공간</span>
+            <span class="tag">#도시</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-author">이수진</span>
+            <span class="card-meta">7분</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-num">01 — 02</div>
+          <div class="card-category">인터뷰</div>
+          <h3 class="card-title">잊혀진 것들의 아카이브</h3>
+          <p class="card-excerpt">사진작가 박서연은 10년째 철거 예정 건물을 기록한다. 기록이란 무엇인지, 선택의 문제는 무엇인지 이야기했다.</p>
+          <div class="card-tags">
+            <span class="tag">#기록</span>
+            <span class="tag">#사진</span>
+            <span class="tag">#철거</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-author">편집부</span>
+            <span class="card-meta">11분</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-num">01 — 03</div>
+          <div class="card-category">노트</div>
+          <h3 class="card-title">선택받지 못한 사진들</h3>
+          <p class="card-excerpt">현상된 필름에는 인화되지 않은 사진들이 남는다. 공식 기억 바깥의 것들. 그것들은 어디로 가는가.</p>
+          <div class="card-tags">
+            <span class="tag">#사진</span>
+            <span class="tag">#선택</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-author">김도현</span>
+            <span class="card-meta">5분</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">이번 호 참여자</h2>
+        <a class="section-link" onclick="showPage('people')">전체 보기</a>
+      </div>
+      <div class="people-strip">
+        <div class="person-card">
+          <div class="person-avatar">이수</div>
+          <div class="person-name">이수진</div>
+          <div class="person-role">Writer</div>
+          <div class="person-bio">도시 공간과 기억의 관계를 탐구하는 글쓰기를 합니다. 건축 역사학 배경.</div>
+        </div>
+        <div class="person-card">
+          <div class="person-avatar">박서</div>
+          <div class="person-name">박서연</div>
+          <div class="person-role">Photographer</div>
+          <div class="person-bio">철거 예정 건물을 10년째 기록 중. 서울과 지방 도시를 오갑니다.</div>
+        </div>
+        <div class="person-card">
+          <div class="person-avatar">김도</div>
+          <div class="person-name">김도현</div>
+          <div class="person-role">Editor · Writer</div>
+          <div class="person-bio">AKI 편집자. 사진, 출판, 아카이빙 실천에 관심.</div>
+        </div>
+        <div class="person-card" style="background:var(--surface);">
+          <div style="padding-top:4px; font-family:var(--f-mono); font-size:11px; color:var(--muted-lt); letter-spacing:0.08em;">NEXT ISSUE</div>
+          <div style="margin-top:24px; font-family:var(--f-ui); font-size:13px; color:var(--muted);">다음 호 참여자를 모집 중입니다.</div>
+          <div style="margin-top:16px;"><a href="#" style="font-family:var(--f-mono);font-size:11px;color:var(--accent);border-bottom:1px solid var(--accent);">기여 방법 →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VAULT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">보관함</h2>
+        <a class="section-link" onclick="showPage('vault')">전체 보기</a>
+      </div>
+      <div class="vault-list">
+        <div class="vault-item">
+          <div class="vault-icon">📄</div>
+          <div>
+            <div class="vault-title">기억술(記憶術)의 역사 — 발췌 번역</div>
+            <div class="vault-meta">PDF · 12p · 출처: Frances Yates, 1966</div>
+          </div>
+          <a href="#" class="vault-download">다운로드</a>
+        </div>
+        <div class="vault-item">
+          <div class="vault-icon">🔗</div>
+          <div>
+            <div class="vault-title">서울 도시 재개발 아카이브 프로젝트</div>
+            <div class="vault-meta">링크 · 서울역사박물관</div>
+          </div>
+          <a href="#" class="vault-download">링크 열기</a>
+        </div>
+        <div class="vault-item">
+          <div class="vault-icon">🖼</div>
+          <div>
+            <div class="vault-title">박서연 작가 사진 4점 — 세운상가 시리즈</div>
+            <div class="vault-meta">이미지 · CC BY-NC · 2024</div>
+          </div>
+          <a href="#" class="vault-download">보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══════════════════ PROMPT ══════════════════ -->
+<div id="page-prompt" class="page">
+  <div class="container">
+    <div class="page-header">
+      <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.1em;margin-bottom:16px;">ISSUE 01 · 2025.03.01</div>
+      <h1 class="page-title">우리는 무엇을 기억하기로 선택하는가</h1>
+      <p class="page-subtitle" style="max-width:600px;">이번 호 AKI의 질문입니다. 모든 글은 이 질문에서 출발하거나, 이 질문을 향해 돌아옵니다.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:start;">
+      <div>
+        <p style="font-family:var(--f-body);font-size:16px;line-height:1.95;color:var(--text);margin-bottom:20px;">
+          기억은 중립적이지 않습니다. 무엇이 남고 무엇이 사라지는가는 언제나 선택의 문제입니다. 개인의 선택이기도 하고, 제도의 선택이기도 하고, 물리적 조건의 선택이기도 합니다.
+        </p>
+        <p style="font-family:var(--f-body);font-size:16px;line-height:1.95;color:var(--text);margin-bottom:20px;">
+          AKI 첫 호는 이 질문에서 출발합니다. 글쓰기, 사진, 도시, 출판. 각 분야에서 기억의 선택이 어떻게 일어나는지, 그 선택에서 무엇이 빠져나가는지를 살펴봅니다.
+        </p>
+        <blockquote style="border-left:3px solid var(--accent);padding:16px 20px;background:var(--accent-bg);margin:32px 0;font-family:var(--f-display);font-size:19px;font-style:italic;color:var(--accent);line-height:1.6;">
+          "선택받지 못한 것들에게도 형태가 있다. 그 형태를 기록하는 것이 이 진의 역할이다."
+        </blockquote>
+        <h2 style="font-family:var(--f-display);font-size:22px;font-weight:500;color:var(--text);margin:40px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);">이번 호 읽기 순서</h2>
+        <ol style="list-style:none;display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);background:var(--border);">
+          <li onclick="showArticle()" style="background:var(--bg);padding:16px 20px;cursor:pointer;font-family:var(--f-body);font-size:14px;color:var(--text);display:flex;align-items:center;gap:16px;transition:background 0.2s;" onmouseover="this.style.background='var(--surface)'" onmouseout="this.style.background='var(--bg)'">
+            <span style="font-family:var(--f-mono);font-size:11px;color:var(--accent);min-width:24px;">01</span>
+            기억은 장소에 붙는다 — 에세이
+          </li>
+          <li style="background:var(--bg);padding:16px 20px;cursor:pointer;font-family:var(--f-body);font-size:14px;color:var(--text);display:flex;align-items:center;gap:16px;" onmouseover="this.style.background='var(--surface)'" onmouseout="this.style.background='var(--bg)'">
+            <span style="font-family:var(--f-mono);font-size:11px;color:var(--accent);min-width:24px;">02</span>
+            잊혀진 것들의 아카이브 — 인터뷰
+          </li>
+          <li style="background:var(--bg);padding:16px 20px;cursor:pointer;font-family:var(--f-body);font-size:14px;color:var(--text);display:flex;align-items:center;gap:16px;" onmouseover="this.style.background='var(--surface)'" onmouseout="this.style.background='var(--bg)'">
+            <span style="font-family:var(--f-mono);font-size:11px;color:var(--accent);min-width:24px;">03</span>
+            선택받지 못한 사진들 — 노트
+          </li>
+        </ol>
+      </div>
+      <div style="border:1px solid var(--border);padding:24px;position:sticky;top:80px;">
+        <div style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;">이번 호 태그</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="tag active">#기억</span>
+          <span class="tag">#공간</span>
+          <span class="tag">#기록</span>
+          <span class="tag">#사진</span>
+          <span class="tag">#도시</span>
+          <span class="tag">#선택</span>
+          <span class="tag">#철거</span>
+        </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;">
+        <div style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">참여자</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="font-family:var(--f-ui);font-size:13px;color:var(--text);">이수진 <span style="color:var(--muted);font-size:11px;">Writer</span></div>
+          <div style="font-family:var(--f-ui);font-size:13px;color:var(--text);">박서연 <span style="color:var(--muted);font-size:11px;">Photographer</span></div>
+          <div style="font-family:var(--f-ui);font-size:13px;color:var(--text);">김도현 <span style="color:var(--muted);font-size:11px;">Editor</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ TEXT LIST ══════════════════ -->
+<div id="page-text" class="page">
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">텍스트</h1>
+      <p class="page-subtitle">에세이, 인터뷰, 리뷰, 노트, 발췌 등 모든 본문 콘텐츠</p>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">필터</span>
+      <span class="tag active" onclick="filterTag(this)">전체</span>
+      <span class="tag" onclick="filterTag(this)">에세이</span>
+      <span class="tag" onclick="filterTag(this)">인터뷰</span>
+      <span class="tag" onclick="filterTag(this)">노트</span>
+      <span class="tag" onclick="filterTag(this)">리뷰</span>
+      <span class="tag" onclick="filterTag(this)">#기억</span>
+      <span class="tag" onclick="filterTag(this)">#공간</span>
+    </div>
+    <div class="list-view">
+      <div class="list-item" onclick="showArticle()">
+        <div>
+          <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <span style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);">01 · 에세이</span>
+          </div>
+          <div class="list-item-title">기억은 장소에 붙는다</div>
+          <div class="list-item-summary">우리가 기억이라고 부르는 것들은 대부분 장소와 결부되어 있다. 장소가 사라지면 기억도 희미해진다.</div>
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <span class="tag">#기억</span><span class="tag">#공간</span><span class="tag">#도시</span>
+          </div>
+        </div>
+        <div style="text-align:right;min-width:80px;">
+          <div class="list-item-meta">이수진</div>
+          <div class="list-item-meta" style="margin-top:4px;">7분</div>
+        </div>
+      </div>
+      <div class="list-item">
+        <div>
+          <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <span style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);">01 · 인터뷰</span>
+          </div>
+          <div class="list-item-title">잊혀진 것들의 아카이브</div>
+          <div class="list-item-summary">사진작가 박서연은 10년째 철거 예정 건물을 기록한다. 기록이란 무엇인지, 선택의 문제는 무엇인지.</div>
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <span class="tag">#기록</span><span class="tag">#사진</span><span class="tag">#철거</span>
+          </div>
+        </div>
+        <div style="text-align:right;min-width:80px;">
+          <div class="list-item-meta">편집부</div>
+          <div class="list-item-meta" style="margin-top:4px;">11분</div>
+        </div>
+      </div>
+      <div class="list-item">
+        <div>
+          <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <span style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);">01 · 노트</span>
+          </div>
+          <div class="list-item-title">선택받지 못한 사진들</div>
+          <div class="list-item-summary">현상된 필름에는 인화되지 않은 사진들이 남는다. 공식 기억 바깥의 것들은 어디로 가는가.</div>
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <span class="tag">#사진</span><span class="tag">#선택</span>
+          </div>
+        </div>
+        <div style="text-align:right;min-width:80px;">
+          <div class="list-item-meta">김도현</div>
+          <div class="list-item-meta" style="margin-top:4px;">5분</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ ARTICLE DETAIL ══════════════════ -->
+<div id="page-article" class="page">
+  <div class="container--narrow">
+    <div class="article-meta-bar">
+      <div class="article-meta-inner">
+        <a onclick="showPage('text')" style="cursor:pointer;color:var(--muted);">← 텍스트</a>
+        <span class="article-meta-sep">|</span>
+        <span class="article-meta-cat">에세이</span>
+        <span class="article-meta-sep">·</span>
+        <span>Issue 01</span>
+        <span class="article-meta-sep">·</span>
+        <span>2025.03.01</span>
+        <span class="article-meta-sep">·</span>
+        <span>7분</span>
+      </div>
+    </div>
+    <h1 class="article-title">기억은 장소에 붙는다</h1>
+    <div class="article-summary">우리가 기억이라고 부르는 것들은 대부분 장소와 결부되어 있다. 장소가 사라지면 기억도 사라진다는 말은 과장이 아니다.</div>
+    <div class="article-body">
+      <p>어릴 때 살던 집을 떠올릴 때, 우리는 추상적인 '집'을 떠올리지 않는다. 특정한 계단의 소리, 창문으로 들어오던 빛의 각도, 부엌의 냄새. 기억은 언제나 구체적인 장소에 깃들어 있다.</p>
+
+      <h2>장소-기억의 구조</h2>
+      <p>기억술의 전통에서 로마인들은 '기억의 궁전'이라는 방법을 썼다. 기억하고 싶은 것들을 상상의 건물 곳곳에 배치해두고, 필요할 때 그 공간을 '걸어다니며' 꺼내는 방식이다. 기억을 저장하는 가장 효율적인 방법이 왜 하필 '공간'인가. 그것은 우리의 뇌가 원래 그렇게 작동하기 때문이다.</p>
+      <p>신경과학 연구들은 기억과 공간 탐색이 뇌의 같은 영역, 해마(hippocampus)에서 처리된다는 것을 보여준다. 기억은 공간에 '붙어' 있는 것이 아니라, 기억 자체가 일종의 공간적 구조를 갖는다.</p>
+
+      <blockquote>장소가 사라지면 기억도 흔들린다. 그것은 감상이 아니라 신경학적 사실에 가깝다.</blockquote>
+
+      <h2>도시 재개발과 기억 삭제</h2>
+      <p>서울의 오래된 동네들이 하나씩 사라진다. 새 아파트가 들어서고, 골목이 사라지고, 오래된 건물들이 표준화된 외관으로 교체된다. 물리적 변화는 그 장소에 기억을 둔 사람들에게 무엇을 의미하는가.</p>
+      <p>박서연의 사진들(이번 호 인터뷰 참고)은 이 문제를 직접적으로 다룬다. 그는 철거 예정 건물들을 기록하면서, 건물 자체보다 그 건물이 담고 있던 흔적들, 벽지, 낙서, 가구의 자국을 먼저 촬영한다.</p>
+
+      <h2>기억의 선택성</h2>
+      <p>모든 것이 기록될 수는 없다. 무엇을 남기고 무엇을 버릴 것인가의 선택은 언제나 일어난다. 그 선택에는 권력이 작동한다. 공식적으로 기록되는 것들, 중요하다고 판단되는 것들, 가치 있다고 인정받는 것들.</p>
+      <p>이 진이 관심을 두는 것은 그 선택에서 빠져나간 것들이다. 인화되지 않은 사진, 기록되지 않은 목소리, 지어지지 않은 건물.</p>
+
+      <div class="related-link">
+        <span>관련 인물</span>
+        <span style="color:var(--accent)">박서연 (사진작가) →</span>
+      </div>
+      <div class="related-link">
+        <span>관련 보관 자료</span>
+        <span style="color:var(--accent)">기억술의 역사 — 발췌 번역 →</span>
+      </div>
+      <hr>
+      <p style="font-style:italic;color:var(--muted);font-size:14px;">기억은 쌓이는 것이 아니라 선택되는 것이다. 그 선택을 들여다보는 것이 이 글의 목적이다.</p>
+    </div>
+    <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--border);">
+      <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);letter-spacing:0.08em;margin-bottom:20px;">관련 글</div>
+      <div class="card-grid" style="grid-template-columns:1fr 1fr;">
+        <article class="card">
+          <div class="card-category">인터뷰</div>
+          <h3 class="card-title" style="font-size:17px;">잊혀진 것들의 아카이브</h3>
+          <div class="card-footer" style="margin-top:12px;">
+            <span class="card-author">편집부</span>
+            <span class="card-meta">11분</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-category">노트</div>
+          <h3 class="card-title" style="font-size:17px;">선택받지 못한 사진들</h3>
+          <div class="card-footer" style="margin-top:12px;">
+            <span class="card-author">김도현</span>
+            <span class="card-meta">5분</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ PEOPLE ══════════════════ -->
+<div id="page-people" class="page">
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">사람</h1>
+      <p class="page-subtitle">AKI를 만드는 작가, 편집자, 사진가, 협업자들</p>
+    </div>
+    <div class="card-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="card">
+        <div style="width:56px;height:56px;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:18px;color:var(--muted);margin-bottom:16px;">이수</div>
+        <div class="card-category">Writer</div>
+        <h3 class="card-title">이수진</h3>
+        <p class="card-excerpt">도시 공간과 기억의 관계를 탐구하는 글쓰기를 합니다. 건축 역사학 배경. 현재 서울 기반.</p>
+        <div class="card-tags">
+          <span class="tag">#기억</span><span class="tag">#도시</span><span class="tag">#건축</span>
+        </div>
+        <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);">기여 글 1편 · Issue 01</div>
+      </div>
+      <div class="card">
+        <div style="width:56px;height:56px;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:18px;color:var(--muted);margin-bottom:16px;">박서</div>
+        <div class="card-category">Photographer</div>
+        <h3 class="card-title">박서연</h3>
+        <p class="card-excerpt">철거 예정 건물을 10년째 기록 중. 서울과 지방 도시를 오가며 작업합니다.</p>
+        <div class="card-tags">
+          <span class="tag">#사진</span><span class="tag">#기록</span><span class="tag">#철거</span>
+        </div>
+        <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);">인터뷰 1편 · Issue 01</div>
+      </div>
+      <div class="card">
+        <div style="width:56px;height:56px;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:18px;color:var(--muted);margin-bottom:16px;">김도</div>
+        <div class="card-category">Editor · Writer</div>
+        <h3 class="card-title">김도현</h3>
+        <p class="card-excerpt">AKI 편집자. 사진, 출판, 아카이빙 실천에 관심. 이 진의 구조를 설계했습니다.</p>
+        <div class="card-tags">
+          <span class="tag">#편집</span><span class="tag">#아카이빙</span>
+        </div>
+        <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);">기여 글 1편 · Issue 01</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ VAULT ══════════════════ -->
+<div id="page-vault" class="page">
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">보관함</h1>
+      <p class="page-subtitle">PDF, 링크, 이미지, 참고자료 — 읽기의 연장선</p>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">유형</span>
+      <span class="tag active">전체</span>
+      <span class="tag">PDF</span>
+      <span class="tag">링크</span>
+      <span class="tag">이미지</span>
+    </div>
+    <div class="vault-list">
+      <div class="vault-item">
+        <div class="vault-icon">📄</div>
+        <div>
+          <div class="vault-title">기억술(記憶術)의 역사 — 발췌 번역</div>
+          <div class="vault-meta">PDF · 12p · Frances Yates, <em>The Art of Memory</em>, 1966 · CC BY-NC</div>
+          <div style="margin-top:6px;display:flex;gap:6px;">
+            <span class="tag">#기억</span><span class="tag">#역사</span>
+          </div>
+        </div>
+        <a href="#" class="vault-download">PDF 다운로드</a>
+      </div>
+      <div class="vault-item">
+        <div class="vault-icon">🔗</div>
+        <div>
+          <div class="vault-title">서울 도시 재개발 아카이브 프로젝트</div>
+          <div class="vault-meta">링크 · 서울역사박물관 운영</div>
+          <div style="margin-top:6px;display:flex;gap:6px;">
+            <span class="tag">#도시</span><span class="tag">#서울</span><span class="tag">#재개발</span>
+          </div>
+        </div>
+        <a href="#" class="vault-download">링크 열기</a>
+      </div>
+      <div class="vault-item">
+        <div class="vault-icon">🖼</div>
+        <div>
+          <div class="vault-title">박서연 작가 사진 4점 — 세운상가 시리즈</div>
+          <div class="vault-meta">이미지 · CC BY-NC · 박서연, 2024</div>
+          <div style="margin-top:6px;display:flex;gap:6px;">
+            <span class="tag">#사진</span><span class="tag">#세운상가</span>
+          </div>
+        </div>
+        <a href="#" class="vault-download">이미지 보기</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ ARCHIVE ══════════════════ -->
+<div id="page-archive" class="page">
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">아카이브</h1>
+      <p class="page-subtitle">AKI가 쌓아온 모든 호 — 질문에서 질문으로</p>
+    </div>
+    <div class="archive-list">
+      <div class="archive-row" onclick="showPage('prompt')">
+        <div class="archive-num">01</div>
+        <div>
+          <div class="archive-question">우리는 무엇을 기억하기로 선택하는가</div>
+          <div class="archive-info">
+            <span>텍스트 4편</span>
+            <span>참여자 3명</span>
+            <span>#기억 #공간 #기록</span>
+          </div>
+        </div>
+        <div class="archive-date">2025.03.01</div>
+      </div>
+      <div class="archive-row" style="opacity:0.4;cursor:default;">
+        <div class="archive-num">02</div>
+        <div>
+          <div class="archive-question" style="color:var(--muted);">준비 중</div>
+          <div class="archive-info"><span>다음 호 예정</span></div>
+        </div>
+        <div class="archive-date">—</div>
+      </div>
+    </div>
+    <div style="margin-top:40px;padding:24px;border:1px solid var(--border);background:var(--surface);text-align:center;">
+      <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.08em;margin-bottom:12px;">AKI는 호가 쌓일수록 강해집니다</div>
+      <div style="font-family:var(--f-body);font-size:14px;color:var(--muted);">글, 사람, 자료가 연결되면서 새로운 탐색 경로가 생깁니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ SEARCH ══════════════════ -->
+<div id="page-search" class="page">
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">탐색</h1>
+      <p class="page-subtitle">제목, 요약, 태그를 통해 AKI 전체를 검색합니다</p>
+    </div>
+    <div class="search-bar">
+      <span>🔍</span>
+      <input type="text" placeholder="검색어를 입력하세요 — 제목, 태그, 키워드" id="search-input" oninput="doSearch(this.value)">
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">태그</span>
+      <span class="tag" onclick="filterTag(this)">#기억</span>
+      <span class="tag" onclick="filterTag(this)">#공간</span>
+      <span class="tag" onclick="filterTag(this)">#기록</span>
+      <span class="tag" onclick="filterTag(this)">#사진</span>
+      <span class="tag" onclick="filterTag(this)">#도시</span>
+      <span class="tag" onclick="filterTag(this)">#선택</span>
+      <span class="tag" onclick="filterTag(this)">#철거</span>
+      <span class="tag" onclick="filterTag(this)">#아카이빙</span>
+    </div>
+    <div id="search-results">
+      <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);margin-bottom:16px;letter-spacing:0.06em;">전체 7개 항목</div>
+      <div class="list-view">
+        <div class="list-item" onclick="showArticle()">
+          <div>
+            <div style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);margin-bottom:6px;">에세이 · Issue 01</div>
+            <div class="list-item-title">기억은 장소에 붙는다</div>
+            <div class="list-item-summary">장소와 기억의 신경학적 연결에 대한 에세이</div>
+            <div style="display:flex;gap:6px;margin-top:8px;"><span class="tag">#기억</span><span class="tag">#공간</span></div>
+          </div>
+          <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);">이수진</div>
+        </div>
+        <div class="list-item">
+          <div>
+            <div style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);margin-bottom:6px;">인터뷰 · Issue 01</div>
+            <div class="list-item-title">잊혀진 것들의 아카이브</div>
+            <div class="list-item-summary">사진작가 박서연 인터뷰 — 철거와 기록</div>
+            <div style="display:flex;gap:6px;margin-top:8px;"><span class="tag">#기록</span><span class="tag">#사진</span></div>
+          </div>
+          <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);">편집부</div>
+        </div>
+        <div class="list-item">
+          <div>
+            <div style="font-family:var(--f-mono);font-size:10px;color:var(--muted-lt);margin-bottom:6px;">PDF · Vault</div>
+            <div class="list-item-title">기억술의 역사 — 발췌 번역</div>
+            <div class="list-item-summary">Frances Yates 원저 발췌 번역본</div>
+            <div style="display:flex;gap:6px;margin-top:8px;"><span class="tag">#기억</span><span class="tag">#역사</span></div>
+          </div>
+          <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted-lt);">자료</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ ABOUT ══════════════════ -->
+<div id="page-about" class="page">
+  <div class="container">
+    <div class="about-hero">
+      <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.1em;margin-bottom:20px;">ABOUT AKI</div>
+      <h1 class="about-title">읽는 진이 아니라<br>쌓이는 진</h1>
+      <p class="about-desc">AKI는 매 호마다 하나의 질문을 던지고, 그 질문에 응답하는 글·사람·자료가 시간이 지날수록 축적되는 GitHub 기반 아카이브 웹진입니다.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-cell">
+        <div class="about-cell-title">운영 방식</div>
+        <div class="about-cell-text">GitHub 저장소 기반으로 운영됩니다. 모든 콘텐츠는 Markdown 파일로 관리되며, Front Matter 메타데이터를 통해 태그, 연결, 필터가 자동으로 구성됩니다.</div>
+      </div>
+      <div class="about-cell">
+        <div class="about-cell-title">기여 방법</div>
+        <div class="about-cell-text">글 제안, 자료 기증, 인터뷰 추천 등 다양한 방식으로 참여할 수 있습니다. GitHub Issue 또는 이메일로 문의주세요.</div>
+      </div>
+      <div class="about-cell">
+        <div class="about-cell-title">발행 주기</div>
+        <div class="about-cell-text">분기 1회 또는 월 1회 발행을 목표로 합니다. 호 사이에도 보관함(Vault)은 수시로 업데이트됩니다.</div>
+      </div>
+      <div class="about-cell">
+        <div class="about-cell-title">연락처</div>
+        <div class="about-cell-text">
+          <a href="#" style="color:var(--accent);font-family:var(--f-mono);font-size:12px;">GitHub →</a><br>
+          <a href="#" style="color:var(--muted);font-family:var(--f-mono);font-size:12px;margin-top:6px;display:block;">aki@example.com</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;padding:32px;border:1px solid var(--border);background:var(--accent-bg);">
+      <div style="font-family:var(--f-display);font-size:20px;font-weight:500;color:var(--accent);margin-bottom:12px;font-style:italic;">
+        "기록은 선택이고, 선택은 편집이고, 편집은 관점이다."
+      </div>
+      <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em;">— AKI 편집 원칙</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">AKI</div>
+    <nav class="footer-nav">
+      <a href="#" onclick="showPage('prompt')">프롬프트</a>
+      <a href="#" onclick="showPage('archive')">아카이브</a>
+      <a href="#" onclick="showPage('about')">소개</a>
+      <a href="#">GitHub</a>
+    </nav>
+    <div class="footer-meta">
+      Issue 01 · 2025.03<br>
+      아카이브 웹진 AKI
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── PAGE NAVIGATION ───
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.site-nav a').forEach(a => a.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) { target.classList.add('active'); window.scrollTo(0,0); }
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+}
+
+function showArticle() {
+  showPage('article');
+}
+
+// ─── FILTER TAGS ───
+function filterTag(el) {
+  el.closest('.filter-row').querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ─── SEARCH ───
+function doSearch(val) {
+  const countEl = document.querySelector('#search-results > div:first-child');
+  if (countEl) {
+    if (val.trim() === '') {
+      countEl.textContent = '전체 7개 항목';
+    } else {
+      countEl.textContent = `"${val}" 검색 결과`;
+    }
+  }
+}
+
+// Init
+showPage('home');
+</script>
+</body>
+</html>
