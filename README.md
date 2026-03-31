@@ -1,1 +1,0 @@
-# aki-ko.github.oi
