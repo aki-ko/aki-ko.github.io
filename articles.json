@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "article-001",
+    "title": "폐기와 갱신 사이: 2026 패스트패션의 윤리적 전환점",
+    "category": "FASHION",
+    "author": "Kim Soyeon",
+    "date": "2026-03-15",
+    "issue": "01",
+    "tags": ["fashion", "sustainability", "소비"],
+    "summary": "패스트패션은 죽었는가? 아니면 더 교묘해졌는가. 지속가능성이라는 언어 뒤에 숨은 산업의 새로운 논리를 추적한다."
+  },
+  {
+    "slug": "article-002",
+    "title": "서울의 골목이 사라지는 속도",
+    "category": "CULTURE",
+    "author": "Park Junho",
+    "date": "2026-03-10",
+    "issue": "01",
+    "tags": ["culture", "urbanism", "동시대성"],
+    "summary": "재개발의 속도가 도시 기억을 지우는 방식에 대하여. 골목의 상실은 곧 서사의 상실이다."
+  },
+  {
+    "slug": "article-003",
+    "title": "전시장 밖의 미술: 팝업과 거리 사이",
+    "category": "ART",
+    "author": "Lee Minjung",
+    "date": "2026-03-05",
+    "issue": "01",
+    "tags": ["art", "exhibition", "culture"],
+    "summary": "화이트큐브를 벗어난 예술은 어디에서 숨쉬는가. 2026년 서울의 비정형 전시 공간을 탐색한다."
+  },
+  {
+    "slug": "article-004",
+    "title": "아이덴티티를 파는 브랜드들: 로고 이후의 세계",
+    "category": "BRAND",
+    "author": "Choi Daeun",
+    "date": "2026-03-01",
+    "issue": "01",
+    "tags": ["brand", "trend", "동시대성"],
+    "summary": "로고는 이제 시작에 불과하다. 세계관, 커뮤니티, 의례를 파는 브랜드의 새로운 언어를 분석한다."
+  },
+  {
+    "slug": "article-005",
+    "title": "스트릿컬처는 어떻게 럭셔리가 되었나",
+    "category": "STREET",
+    "author": "Jang Hyunwoo",
+    "date": "2026-02-28",
+    "issue": "01",
+    "tags": ["street", "fashion", "culture"],
+    "summary": "스케이트보드에서 런웨이까지. 서브컬처가 제도권 패션을 흡수하고 흡수당하는 역학을 살핀다."
+  },
+  {
+    "slug": "article-006",
+    "title": "Y2K는 끝났다: 그 다음 시대의 미감",
+    "category": "CULTURE",
+    "author": "Kim Soyeon",
+    "date": "2026-02-20",
+    "issue": "01",
+    "tags": ["trend", "fashion", "동시대성"],
+    "summary": "2000년대 향수는 이제 포화 상태. 그 다음을 향해 나아가는 미감의 징후들을 포착한다."
+  },
+  {
+    "slug": "article-007",
+    "title": "디지털 원주민의 감각: AI 세대 작가들이 그리는 세계",
+    "category": "ART",
+    "author": "Lee Minjung",
+    "date": "2026-02-15",
+    "issue": "01",
+    "tags": ["art", "digital", "동시대성"],
+    "summary": "AI와 함께 자란 세대의 작가들은 무엇을 그리고 무엇을 거부하는가. 새로운 감수성의 지형을 탐색한다."
+  },
+  {
+    "slug": "article-008",
+    "title": "쇼룸 없는 브랜드: 온라인 패션 하우스의 부상",
+    "category": "FASHION",
+    "author": "Choi Daeun",
+    "date": "2026-02-10",
+    "issue": "01",
+    "tags": ["fashion", "brand", "digital"],
+    "summary": "물리적 공간 없이 세계적인 팬덤을 가진 브랜드들. 그 성립 조건과 한계를 짚는다."
+  },
+  {
+    "slug": "article-009",
+    "title": "냄새를 디자인한다: 향수 산업의 문화적 전환",
+    "category": "CULTURE",
+    "author": "Park Junho",
+    "date": "2026-02-05",
+    "issue": "01",
+    "tags": ["culture", "brand", "욕망"],
+    "summary": "향기는 가장 은밀한 정체성의 언어다. 니치 퍼퓸이 하나의 문화적 실천이 된 맥락을 추적한다."
+  },
+  {
+    "slug": "article-010",
+    "title": "사진과 기억: 필름이 돌아온 이유",
+    "category": "ART",
+    "author": "Jang Hyunwoo",
+    "date": "2026-01-30",
+    "issue": "01",
+    "tags": ["art", "photography", "trend"],
+    "summary": "디지털 시대에 필름 카메라를 드는 행위의 의미. 속도에 저항하는 이미지 만들기의 정치학."
+  }
+]

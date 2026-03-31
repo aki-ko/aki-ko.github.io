@@ -1,0 +1,19 @@
+{
+  "tags": [
+    { "name": "fashion",       "count": 3, "label_ko": "패션" },
+    { "name": "culture",       "count": 4, "label_ko": "문화" },
+    { "name": "art",           "count": 3, "label_ko": "아트" },
+    { "name": "exhibition",    "count": 2, "label_ko": "전시" },
+    { "name": "brand",         "count": 2, "label_ko": "브랜드" },
+    { "name": "street",        "count": 2, "label_ko": "스트릿" },
+    { "name": "sustainability","count": 1, "label_ko": "지속가능성" },
+    { "name": "urbanism",      "count": 2, "label_ko": "도시" },
+    { "name": "digital",       "count": 2, "label_ko": "디지털" },
+    { "name": "trend",         "count": 3, "label_ko": "트렌드" },
+    { "name": "욕망",          "count": 2, "label_ko": "욕망" },
+    { "name": "소비",          "count": 2, "label_ko": "소비" },
+    { "name": "동시대성",      "count": 3, "label_ko": "동시대성" },
+    { "name": "photography",   "count": 1, "label_ko": "사진" },
+    { "name": "collaboration", "count": 2, "label_ko": "콜라보레이션" }
+  ]
+}
