@@ -1,4 +1,4 @@
-# 고윤지 / GO YOONJI
+# 고윤지 / KO YUNJI
 
 **Based in:** Seoul, South Korea  
 **Fields:** Marketing · Art Direction · Art / Culture · Content · Visual Communication
