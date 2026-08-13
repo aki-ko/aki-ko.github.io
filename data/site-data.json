@@ -5,33 +5,218 @@
     "location": "Seoul, South Korea",
     "headline": "Marketing · Art Direction · Art / Culture",
     "bio": "마케팅 실무와 예술·문화 활동을 가로지르며 이미지, 콘텐츠, 브랜드 커뮤니케이션을 다뤄왔습니다. 현재는 마케팅 업무를 수행하며 아트디렉션으로의 확장을 준비하고 있습니다.",
-    "fields": ["Marketing", "Art Direction", "Art / Culture", "Content", "Visual Communication"],
-    "contact": {"email": "12149km@gmail.com", "instagram": "", "github": ""}
+    "fields": [
+      "Marketing",
+      "Art Direction",
+      "Art / Culture",
+      "Content",
+      "Visual Communication"
+    ],
+    "contact": {
+      "email": "12149km@gmail.com",
+      "instagram": "",
+      "github": ""
+    }
   },
-  "education": [{"institution": "계원예술대학교", "program": "융합예술과 / 학사전공심화", "period": "", "location": "대한민국", "description": ""}],
+  "education": [
+    {
+      "institution": "계원예술대학교",
+      "program": "융합예술과 / 학사전공심화",
+      "period": "2021.03~2026.02",
+      "location": "대한민국",
+      "description": ""
+    }
+  ],
   "career": [
-    {"company":"주식회사 하스피업","period":"2026.04 — Present","role":"마케팅기획 · 콘텐츠기획","location":"Seoul, South Korea","summary":"병·의원 클라이언트의 온·오프라인 광고·홍보 콘텐츠를 기획·디자인하고 제작·수정·송출까지 운영.","responsibilities":["홈페이지·웹 배너·디지털 콘텐츠 제작","SNS·스마트플레이스·디지털 광고 이미지 제작","버스쉘터·지하철 등 OOH 광고 시안 제작","포스터·안내물·상담자료·인쇄물 제작","원내 영상·DID·TV 송출용 콘텐츠 제작","카피·정보 구조화, 이미지 보정·합성","클라이언트 피드백 반영 및 수정","기획요청서·일정 관리, 광고 심의 및 출력·송출 파일 제작"],"selectedClients":["연세원탑정형외과","송도통쾌한신경외과","고덕삼성본재활의학과","용문바른통증의학과","문래본튼튼의원","연세DMC재활의학과"]},
-    {"company":"에이비산업(주)","period":"2026.01 — 2026.03","role":"해외영업","location":"","summary":"해외영업과 함께 글로벌 패션 브랜드 대상 신규 원단 개발·제작 관련 업무를 담당.","responsibilities":["해외영업 업무","신규 원단 개발·제작 관련 커뮤니케이션","COACH 관련 원단 개발 업무","Massimo Dutti 관련 원단 개발 업무","Barbour 관련 원단 개발 업무"]}
+    {
+      "company": "주식회사 하스피업",
+      "period": "2026.04~Present",
+      "role": "마케팅기획 · 콘텐츠기획",
+      "location": "Seoul, South Korea",
+      "summary": "병·의원 클라이언트의 온·오프라인 광고·홍보 콘텐츠를 기획·디자인하고 제작·수정·송출까지 운영.",
+      "responsibilities": [
+        "홈페이지·웹 배너·디지털 콘텐츠 제작",
+        "SNS·스마트플레이스·디지털 광고 이미지 제작",
+        "버스쉘터·지하철 등 OOH 광고 시안 제작",
+        "포스터·안내물·상담자료·인쇄물 제작",
+        "원내 영상·DID·TV 송출용 콘텐츠 제작",
+        "카피·정보 구조화, 이미지 보정·합성",
+        "클라이언트 피드백 반영 및 수정",
+        "기획요청서·일정 관리, 광고 심의 및 출력·송출 파일 제작"
+      ],
+      "selectedClients": [
+        "연세원탑정형외과",
+        "송도통쾌한신경외과",
+        "고덕삼성본재활의학과",
+        "용문바른통증의학과",
+        "문래본튼튼의원",
+        "연세DMC재활의학과"
+      ]
+    },
+    {
+      "company": "에이비산업(주)",
+      "period": "2026.01~2026.03",
+      "role": "해외영업",
+      "location": "",
+      "summary": "해외영업과 함께 글로벌 패션 브랜드 대상 신규 원단 개발·제작 관련 업무를 담당.",
+      "responsibilities": [
+        "해외영업 업무",
+        "신규 원단 개발·제작 관련 커뮤니케이션",
+        "COACH 관련 원단 개발 업무",
+        "Massimo Dutti 관련 원단 개발 업무",
+        "Barbour 관련 원단 개발 업무"
+      ]
+    }
   ],
   "experience": [
-    {"title":"tvN 〈프리한 닥터〉","organization":"tvN","period":"Ep.134–144","role":"AD","category":"Broadcast / Production","description":"기획, 촬영 전반, 편집 업무에 참여."},
-    {"title":"칠리뮤직코리아","organization":"Chilli Music Korea","period":"","role":"Artist Support / Content Assistant","category":"Music / Content","description":"내부 아티스트 서포트 및 유튜브 콘텐츠 기획·편집 보조."},
-    {"title":"작가 하지훈 — 나주 소반 프로젝트","organization":"프로젝트 하","period":"","role":"Production","category":"Art / Production","description":"작가 하지훈의 나주 소반 제작 및 포장 업무에 참여."},
-    {"title":"계원창작소 브랜드 프로젝트","organization":"계원창작소","period":"","role":"Branding / Product Planning / Design","category":"University / Brand Project","description":"대학 내 기업 브랜드 리브랜딩 활동에 참여하고 브랜드·상품 기획 및 디자인 업무를 수행."}
+    {
+      "title": "tvN 〈프리한 닥터〉",
+      "organization": "tvN",
+      "period": "2024.01~2024.03",
+      "role": "AD",
+      "category": "Broadcast / Production",
+      "description": "기획, 촬영 전반, 편집 업무에 참여."
+    },
+    {
+      "title": "칠리뮤직코리아",
+      "organization": "Chilli Music Korea",
+      "period": "2022.06~2022.07",
+      "role": "Artist Support / Content Assistant",
+      "category": "Music / Content",
+      "description": "내부 아티스트 서포트 및 유튜브 콘텐츠 기획·편집 보조."
+    },
+    {
+      "title": "작가 하지훈 — 나주 소반 프로젝트",
+      "organization": "프로젝트 하",
+      "period": "2021.10~2021.12",
+      "role": "Production",
+      "category": "Art / Production",
+      "description": "작가 하지훈의 나주 소반 제작 및 포장 업무에 참여."
+    },
+    {
+      "title": "계원창작소 브랜드 프로젝트",
+      "organization": "계원창작소",
+      "period": "2021.08~2021.11",
+      "role": "Branding / Product Planning / Design",
+      "category": "University / Brand Project",
+      "description": "대학 내 기업 브랜드 리브랜딩 활동에 참여하고 브랜드·상품 기획 및 디자인 업무를 수행."
+    },
+    {
+      "title": "BOKEH",
+      "organization": "BOKEH",
+      "period": "2024.12~2026.01",
+      "role": "Editor",
+      "category": "Editorial / Culture",
+      "description": "문화비평 및 오리지널 콘텐츠 글 작성."
+    }
   ],
   "projects": [
-    {"id":"hospiup-medical-communication","title":"Medical Brand Communication","year":"2026","category":["Marketing","Design","Content","OOH"],"organization":"주식회사 하스피업","role":["Marketing Planning","Content Planning","Design"],"description":"병·의원 클라이언트를 대상으로 디지털/SNS, 광고·홍보물, 편집·인쇄, 영상·모션 등 다양한 접점의 커뮤니케이션물을 제작.","highlights":["스마트플레이스·SNS 이미지","버스쉘터·지하철 광고","상담자료·원내 안내물","유튜브 배너·프로필·워터마크","원내 TV·엘리베이터 영상 광고","판촉물 및 인쇄물"],"cover":"","featured":true},
-    {"id":"free-doctor","title":"tvN 〈프리한 닥터〉 Ep.134–144","year":"","category":["Broadcast","Video","Production"],"organization":"tvN","role":["AD","Planning","Shooting","Editing"],"description":"Ep.134–144 AD. 기획, 촬영 전반, 편집 업무 참여.","cover":"","featured":true},
-    {"id":"chilli-music-content","title":"Chilli Music Korea Content Support","year":"","category":["Music","Content","YouTube"],"organization":"칠리뮤직코리아","role":["Artist Support","Content Planning Assistant","Editing Assistant"],"description":"내부 아티스트 서포트 및 유튜브 콘텐츠 기획·편집 보조.","cover":"","featured":false}
+    {
+      "id": "hospiup-medical-communication",
+      "title": "Medical Brand Communication",
+      "year": "2026",
+      "category": [
+        "Marketing",
+        "Design",
+        "Content",
+        "OOH"
+      ],
+      "organization": "주식회사 하스피업",
+      "role": [
+        "Marketing Planning",
+        "Content Planning",
+        "Design"
+      ],
+      "description": "병·의원 클라이언트를 대상으로 디지털/SNS, 광고·홍보물, 편집·인쇄, 영상·모션 등 다양한 접점의 커뮤니케이션물을 제작.",
+      "highlights": [
+        "스마트플레이스·SNS 이미지",
+        "버스쉘터·지하철 광고",
+        "상담자료·원내 안내물",
+        "유튜브 배너·프로필·워터마크",
+        "원내 TV·엘리베이터 영상 광고",
+        "판촉물 및 인쇄물"
+      ],
+      "cover": "",
+      "featured": true
+    },
+    {
+      "id": "free-doctor",
+      "title": "tvN 〈프리한 닥터〉 Ep.134–144",
+      "year": "2024.01~2024.03",
+      "category": [
+        "Broadcast",
+        "Video",
+        "Production"
+      ],
+      "organization": "tvN",
+      "role": [
+        "AD",
+        "Planning",
+        "Shooting",
+        "Editing"
+      ],
+      "description": "Ep.134–144 AD. 기획, 촬영 전반, 편집 업무 참여.",
+      "cover": "",
+      "featured": true
+    },
+    {
+      "id": "chilli-music-content",
+      "title": "Chilli Music Korea Content Support",
+      "year": "2022.06~2022.07",
+      "category": [
+        "Music",
+        "Content",
+        "YouTube"
+      ],
+      "organization": "칠리뮤직코리아",
+      "role": [
+        "Artist Support",
+        "Content Planning Assistant",
+        "Editing Assistant"
+      ],
+      "description": "내부 아티스트 서포트 및 유튜브 콘텐츠 기획·편집 보조.",
+      "cover": "",
+      "featured": false
+    }
   ],
   "art": [
-    {"slug":"dasarang-park","title":"다사랑어린이공원","year":"","type":"Video","medium":"Moving Image","description":"대림동 다사랑어린이공원을 중심으로 도시의 가장자리, 몸, 춤, 공동체의 시간을 바라본 영상 작업.","images":[]},
-    {"slug":"jeju","title":"제주도","year":"","type":"Photography","medium":"중형 필름 + 인스탁스백 (스캔)","description":"개인 사진 작업.","images":[]},
-    {"slug":"shadow-island","title":"그림자 섬","year":"","type":"Exhibition","medium":"Exhibition / Planning","description":"대전 비호소에서 진행된 전시 관련 기록.","images":[]}
+    {
+      "slug": "dasarang-park",
+      "title": "다사랑어린이공원",
+      "year": "",
+      "type": "Video",
+      "medium": "Moving Image",
+      "description": "대림동 다사랑어린이공원을 중심으로 도시의 가장자리, 몸, 춤, 공동체의 시간을 바라본 영상 작업.",
+      "images": []
+    },
+    {
+      "slug": "shadow-island",
+      "title": "그림자 섬",
+      "year": "",
+      "type": "Exhibition",
+      "medium": "Exhibition / Planning",
+      "description": "대전 비호소에서 진행된 전시 관련 기록. 기존 포트폴리오에 전시 기획 및 참여 항목으로 수록.",
+      "images": []
+    }
   ],
   "writing": [
-    {"title":"스크린의 인민들은 어디에 도착하지 못했는가","platform":"Brunch","url":"https://brunch.co.kr/@kosop7/12","description":"디아스포라, 경계, 배제와 이동의 감각을 다룬 글."},
-    {"title":"산업의 유령과 방황하는 영혼 : 누가 울새를 죽였나?","platform":"Brunch","url":"https://brunch.co.kr/@kosop7/11","description":"산업화의 잔해, 노동과 포스트산업 사회의 풍경을 다룬 글."},
-    {"title":"반도체 노동: 무균실의 손끝들은 어디에서 멈추었는가","platform":"Brunch","url":"https://brunch.co.kr/@kosop7/14","description":"반도체 산업의 노동 환경, 신체, 권리와 산업 구조를 다룬 글."}
+    {
+      "title": "스크린의 인민들은 어디에 도착하지 못했는가",
+      "platform": "Brunch",
+      "url": "https://brunch.co.kr/@kosop7/12",
+      "description": "디아스포라, 경계, 배제와 이동의 감각을 다룬 글."
+    },
+    {
+      "title": "산업의 유령과 방황하는 영혼 : 누가 울새를 죽였나?",
+      "platform": "Brunch",
+      "url": "https://brunch.co.kr/@kosop7/11",
+      "description": "산업화의 잔해, 노동과 포스트산업 사회의 풍경을 다룬 글."
+    },
+    {
+      "title": "반도체 노동: 무균실의 손끝들은 어디에서 멈추었는가",
+      "platform": "Brunch",
+      "url": "https://brunch.co.kr/@kosop7/14",
+      "description": "반도체 산업의 노동 환경, 신체, 권리와 산업 구조를 다룬 글."
+    }
   ]
 }

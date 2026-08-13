@@ -1,0 +1,10 @@
+---
+title: "BOKEH"
+period: "2024.12~2026.01"
+role: "Editor"
+category: "Editorial / Culture"
+---
+
+# BOKEH
+
+문화비평 및 오리지널 콘텐츠 글 작성.

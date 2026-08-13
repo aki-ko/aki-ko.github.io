@@ -19,6 +19,8 @@
 
 로컬 서버를 실행하세요.
 
+### Python
+
 ```bash
 python -m http.server 8000
 ```
@@ -44,9 +46,13 @@ git push -u origin main
 4. Branch `main`, Folder `/ (root)`
 5. 저장
 
+이 프로젝트는 상대경로를 사용해 일반적인 프로젝트형 GitHub Pages에서도 동작하도록 구성했습니다.
+
 ## 콘텐츠 수정
 
-웹사이트에서 읽는 핵심 데이터: `data/site-data.json`
+웹사이트에서 읽는 핵심 데이터:
+
+`data/site-data.json`
 
 세부 주제별 JSON도 함께 제공됩니다.
 
@@ -58,7 +64,11 @@ git push -u origin main
 - `data/art.json`
 - `data/writing.json`
 
+현재 `main.js`는 관리 편의를 위해 `site-data.json` 한 파일을 읽습니다. 주제별 JSON은 편집/백업용입니다.
+
 ## 이미지 추가
+
+예:
 
 ```text
 assets/images/projects/my-project/
@@ -71,3 +81,7 @@ assets/images/projects/my-project/
 ## 구조
 
 자세한 설명: `docs/STRUCTURE.md`
+
+## 날짜 표기
+
+기간은 `YYYY.MM~YYYY.MM` 형식으로 월까지만 표기합니다.
