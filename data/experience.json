@@ -1,34 +1,6 @@
 [
-  {
-    "title": "tvN 〈프리한 닥터〉",
-    "organization": "tvN",
-    "period": "Ep.134–144",
-    "role": "AD",
-    "category": "Broadcast / Production",
-    "description": "기획, 촬영 전반, 편집 업무에 참여."
-  },
-  {
-    "title": "칠리뮤직코리아",
-    "organization": "Chilli Music Korea",
-    "period": "기간 확인 필요",
-    "role": "Artist Support / Content Assistant",
-    "category": "Music / Content",
-    "description": "내부 아티스트 서포트 및 유튜브 콘텐츠 기획·편집 보조."
-  },
-  {
-    "title": "작가 하지훈 — 나주 소반 프로젝트",
-    "organization": "프로젝트 하",
-    "period": "기간 확인 필요",
-    "role": "Production",
-    "category": "Art / Production",
-    "description": "작가 하지훈의 나주 소반 제작 및 포장 업무에 참여."
-  },
-  {
-    "title": "계원창작소 브랜드 프로젝트",
-    "organization": "계원창작소",
-    "period": "기간 확인 필요",
-    "role": "Branding / Product Planning / Design",
-    "category": "University / Brand Project",
-    "description": "대학 내 기업 브랜드 리브랜딩 활동에 참여하고 브랜드·상품 기획 및 디자인 업무를 수행."
-  }
+  {"title":"tvN 〈프리한 닥터〉","organization":"tvN","period":"Ep.134–144","role":"AD","category":"Broadcast / Production","description":"기획, 촬영 전반, 편집 업무에 참여."},
+  {"title":"칠리뮤직코리아","organization":"Chilli Music Korea","period":"","role":"Artist Support / Content Assistant","category":"Music / Content","description":"내부 아티스트 서포트 및 유튜브 콘텐츠 기획·편집 보조."},
+  {"title":"작가 하지훈 — 나주 소반 프로젝트","organization":"프로젝트 하","period":"","role":"Production","category":"Art / Production","description":"작가 하지훈의 나주 소반 제작 및 포장 업무에 참여."},
+  {"title":"계원창작소 브랜드 프로젝트","organization":"계원창작소","period":"","role":"Branding / Product Planning / Design","category":"University / Brand Project","description":"대학 내 기업 브랜드 리브랜딩 활동에 참여하고 브랜드·상품 기획 및 디자인 업무를 수행."}
 ]

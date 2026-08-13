@@ -2,7 +2,7 @@
 title: "제주도"
 type: "Photography"
 medium: "중형 필름 + 인스탁스백 (스캔)"
-year: "확인 필요"
+year: ""
 ---
 
 # 제주도

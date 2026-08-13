@@ -1,29 +1,5 @@
 [
-  {
-    "slug": "dasarang-park",
-    "title": "다사랑어린이공원",
-    "year": "연도 확인 필요",
-    "type": "Video",
-    "medium": "Moving Image",
-    "description": "대림동 다사랑어린이공원을 중심으로 도시의 가장자리, 몸, 춤, 공동체의 시간을 바라본 영상 작업.",
-    "images": []
-  },
-  {
-    "slug": "jeju",
-    "title": "제주도",
-    "year": "연도 확인 필요",
-    "type": "Photography",
-    "medium": "중형 필름 + 인스탁스백 (스캔)",
-    "description": "개인 사진 작업.",
-    "images": []
-  },
-  {
-    "slug": "shadow-island",
-    "title": "그림자 섬",
-    "year": "연도 확인 필요",
-    "type": "Exhibition",
-    "medium": "Exhibition / Planning",
-    "description": "대전 비호소에서 진행된 전시 관련 기록. 기존 포트폴리오에 전시 기획 및 참여 항목으로 수록.",
-    "images": []
-  }
+  {"slug":"dasarang-park","title":"다사랑어린이공원","year":"","type":"Video","medium":"Moving Image","description":"대림동 다사랑어린이공원을 중심으로 도시의 가장자리, 몸, 춤, 공동체의 시간을 바라본 영상 작업.","images":[]},
+  {"slug":"jeju","title":"제주도","year":"","type":"Photography","medium":"중형 필름 + 인스탁스백 (스캔)","description":"개인 사진 작업.","images":[]},
+  {"slug":"shadow-island","title":"그림자 섬","year":"","type":"Exhibition","medium":"Exhibition / Planning","description":"대전 비호소에서 진행된 전시 관련 기록.","images":[]}
 ]

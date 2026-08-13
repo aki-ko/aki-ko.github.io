@@ -25,8 +25,4 @@ assets/images/projects/[slug]/
 ## 파일명
 영문 소문자와 하이픈 권장.
 
-예:
-`2026-hospiup-bus-shelter-001.jpg`
-
-## 공개 전
-클라이언트 개인정보, 환자 정보, 사내 경로, 미공개 자료가 이미지에 포함되지 않았는지 확인합니다.
+예: `2026-hospiup-bus-shelter-001.jpg`
