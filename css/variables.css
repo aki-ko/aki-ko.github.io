@@ -1,0 +1,12 @@
+:root{
+  --bg:#f4f4f0;
+  --text:#111;
+  --muted:#6d6d68;
+  --line:#c8c8c1;
+  --panel:#ecece6;
+  --font-sans:Arial, Helvetica, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono:"SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --pad:clamp(16px,2.2vw,36px);
+  --gap:clamp(18px,2.4vw,40px);
+  --max:1900px;
+}

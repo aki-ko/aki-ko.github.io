@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>고윤지 — Archive / Portfolio</title>
+  <meta name="description" content="고윤지의 마케팅, 아트디렉션, 예술·문화 활동을 기록하는 개인 아카이브.">
+  <meta property="og:title" content="고윤지 — Archive / Portfolio">
+  <meta property="og:description" content="Marketing · Art Direction · Art / Culture">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="홈">GO YOONJI</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">MENU</button>
+    <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+      <a href="#profile">Profile</a>
+      <a href="#education">Education</a>
+      <a href="#career">Career</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#art">Art</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-index">ARCHIVE / PORTFOLIO — 2026</div>
+      <h1 id="hero-name">고윤지</h1>
+      <div class="hero-meta">
+        <p id="hero-location">Seoul, South Korea</p>
+        <p id="hero-headline">Marketing · Art Direction · Art / Culture</p>
+      </div>
+      <p id="hero-bio" class="hero-bio"></p>
+    </section>
+
+    <section id="profile" class="section">
+      <div class="section-label">01 / PROFILE</div>
+      <div class="section-body two-col">
+        <h2>Profile</h2>
+        <div>
+          <p id="profile-bio" class="lead"></p>
+          <div id="profile-fields" class="tag-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-label">02 / EDUCATION</div>
+      <div class="section-body">
+        <h2>Education</h2>
+        <div id="education-list" class="index-list"></div>
+      </div>
+    </section>
+
+    <section id="career" class="section">
+      <div class="section-label">03 / CAREER</div>
+      <div class="section-body">
+        <h2>Career</h2>
+        <div id="career-list" class="stack-list"></div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-label">04 / EXPERIENCE</div>
+      <div class="section-body">
+        <h2>Experience</h2>
+        <div id="experience-list" class="index-list"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-label">05 / PROJECTS</div>
+      <div class="section-body">
+        <div class="section-heading-row">
+          <h2>Projects</h2>
+          <div id="project-filters" class="filters" aria-label="프로젝트 필터"></div>
+        </div>
+        <div id="projects-list" class="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="art" class="section">
+      <div class="section-label">06 / ART</div>
+      <div class="section-body">
+        <h2>Art Practice</h2>
+        <div id="art-list" class="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="writing" class="section">
+      <div class="section-label">07 / WRITING</div>
+      <div class="section-body">
+        <h2>Writing</h2>
+        <div id="writing-list" class="index-list"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="section-label">08 / CONTACT</div>
+      <div class="section-body two-col">
+        <h2>Contact</h2>
+        <div>
+          <a id="contact-email" class="contact-link" href="#">Email</a>
+          <p class="muted">전화번호는 ZIP 내부 private 데이터에만 보관되어 있으며 Git에는 기본적으로 포함되지 않습니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>GO YOONJI</span>
+    <span>PERSONAL ARCHIVE</span>
+    <span id="footer-year"></span>
+  </footer>
+</body>
+</html>
