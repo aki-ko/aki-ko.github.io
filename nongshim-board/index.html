@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070907" />
+  <meta name="description" content="농심에 관한 미확인 사건과 음모론을 수집하는 가상의 비공식 아카이브 프로토타입" />
+  <title>NONGSHIM CONSPIRACY BOARD</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="crt" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="access-screen" id="accessScreen">
+    <div class="access-terminal">
+      <div class="terminal-line"><span class="prompt">&gt;</span> NONGSHIM_SECRET_NODE_01</div>
+      <div class="terminal-line dim">NETWORK STATUS <span class="ok">ONLINE</span></div>
+      <div class="terminal-line dim">LAST MIRROR 2026.09.03 / 02:40:11</div>
+      <div class="terminal-rule"></div>
+      <p class="access-kicker">UNOFFICIAL ARCHIVE</p>
+      <h1>NONGSHIM<br /><span>CONSPIRACY BOARD</span></h1>
+      <p class="access-copy">농심과 관련된 미확인 사건, 목격담, 제보를 보관하는 비공식 아카이브입니다.<br />모든 게시물의 사실 여부는 확인되지 않았습니다.</p>
+      <button id="accessButton" class="terminal-button" type="button">[ ACCESS BOARD ]</button>
+      <p class="access-foot">접속 기록은 남지 않습니다. 아마도.</p>
+    </div>
+  </div>
+
+  <main class="site" id="site" hidden>
+    <header class="site-header">
+      <button class="masthead" id="homeButton" type="button" aria-label="게시판 홈으로 이동">
+        <span class="masthead__sigil">N</span>
+        <span><b>NONGSHIM CONSPIRACY BOARD</b><small>UNVERIFIED REPORT ARCHIVE</small></span>
+      </button>
+      <div class="site-header__right">
+        <span class="online-dot"></span>
+        <span id="clockText">NODE 01 ONLINE</span>
+        <button class="ghost-link" id="openComposerTop" type="button">새 제보 등록</button>
+      </div>
+    </header>
+
+    <section class="hero-strip">
+      <div class="hero-strip__copy">
+        <p class="mono-label">PUBLIC MIRROR / READ-ONLY GLOBAL ARCHIVE</p>
+        <h2>농심에 대해 알고 있는<br /><em>사실을 제보하십시오.</em></h2>
+        <p>우연이라고 하기엔 이상하고, 사실이라고 하기엔 더 이상한 이야기들.<br />이곳에서는 모든 의심이 하나의 사건 파일이 됩니다.</p>
+      </div>
+      <div class="hero-strip__radar" aria-hidden="true">
+        <div class="radar"><i></i><b></b><span class="radar-dot radar-dot--1"></span><span class="radar-dot radar-dot--2"></span><span class="radar-dot radar-dot--3"></span></div>
+        <small>ANOMALY SIGNAL<br /><strong>4 DETECTED</strong></small>
+      </div>
+    </section>
+
+    <nav class="category-nav" aria-label="제품별 게시판 필터">
+      <button type="button" class="category-button is-active" data-category="ALL">ALL</button>
+      <button type="button" class="category-button" data-category="새우깡">새우깡</button>
+      <button type="button" class="category-button" data-category="신라면">신라면</button>
+      <button type="button" class="category-button" data-category="짜파게티">짜파게티</button>
+      <button type="button" class="category-button" data-category="너구리">너구리</button>
+      <button type="button" class="category-button" data-category="기타">기타</button>
+      <label class="search-box">
+        <span class="sr-only">게시물 검색</span>
+        <input id="searchInput" type="search" placeholder="SEARCH FILES..." autocomplete="off" />
+        <span>⌕</span>
+      </label>
+    </nav>
+
+    <section class="layout">
+      <aside class="sidebar sidebar--left">
+        <div class="panel panel--trend">
+          <div class="panel__head"><span>TRENDING THEORY</span><small>LIVE</small></div>
+          <ol class="trend-list" id="trendList"></ol>
+        </div>
+
+        <div class="panel system-panel">
+          <div class="panel__head"><span>BOARD STATUS</span><small>SYS</small></div>
+          <dl>
+            <div><dt>ARCHIVED FILES</dt><dd id="archiveCount">0000</dd></div>
+            <div><dt>ACTIVE USERS</dt><dd>0187</dd></div>
+            <div><dt>CLASSIFIED</dt><dd id="classifiedCount">0000</dd></div>
+            <div><dt>LAST UPDATE</dt><dd>11:42:03</dd></div>
+          </dl>
+        </div>
+
+        <button class="case-zero" id="caseZeroButton" type="button">
+          <span>CASE #0000</span>
+          <b>이 게시판은 누가 만들었습니까?</b>
+          <small>ACCESS RESTRICTED</small>
+        </button>
+      </aside>
+
+      <section class="board" aria-labelledby="boardTitle">
+        <div class="board-toolbar">
+          <div>
+            <p class="mono-label">CURRENT DIRECTORY</p>
+            <h2 id="boardTitle">ALL REPORTS</h2>
+          </div>
+          <div class="board-toolbar__actions">
+            <select id="sortSelect" aria-label="정렬 방식">
+              <option value="recent">최신순</option>
+              <option value="credibility">신빙성순</option>
+              <option value="views">조회순</option>
+              <option value="evidence">증거순</option>
+            </select>
+            <button class="report-button" id="openComposer" type="button">+ 새로운 제보 등록</button>
+          </div>
+        </div>
+
+        <div class="notice-row">
+          <span class="notice-badge">NOTICE</span>
+          <p><b>운영 규칙:</b> 사실 확인이 되지 않은 이야기만 올려주세요. 지나치게 그럴듯하면 관리자가 의심합니다.</p>
+        </div>
+
+        <div class="post-list" id="postList"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span>NO FILES FOUND</span>
+          <p>검색 조건과 일치하는 사건 파일이 없습니다.</p>
+        </div>
+      </section>
+
+      <aside class="sidebar sidebar--right">
+        <div class="panel official-panel">
+          <div class="panel__head"><span>OFFICIAL?</span><small>?</small></div>
+          <div class="official-avatar">N</div>
+          <b>NONGSHIM_OFFICIAL</b>
+          <p>“해당 내용은 사실이 아닙니다.”</p>
+          <small>― 2분 전</small>
+          <div class="official-replies">
+            <span>더 수상함</span>
+            <span>왜 이렇게 빨리 왔지</span>
+            <span>공식이 봤다는 게 증거임</span>
+          </div>
+        </div>
+
+        <div class="panel tip-panel">
+          <div class="panel__head"><span>HOW TO REPORT</span><small>GUIDE</small></div>
+          <ol>
+            <li><b>01</b><span>제품에서 이상 현상을 발견한다.</span></li>
+            <li><b>02</b><span>우연으로 설명하기 어려운 이유를 만든다.</span></li>
+            <li><b>03</b><span>증거를 붙이고 최대한 진지하게 쓴다.</span></li>
+          </ol>
+        </div>
+
+        <div class="panel disclosure-panel">
+          <span>PROTOTYPE NOTE</span>
+          <p>이 사이트의 기본 게시물은 데모용 가상 콘텐츠입니다. 방문자가 새로 작성한 글·투표·증거 댓글은 서버에 전송되지 않고 <b>현재 브라우저에만 저장</b>됩니다.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="site-footer">
+      <div><b>NONGSHIM CONSPIRACY BOARD</b><span>NON-OFFICIAL DIGITAL CAMPAIGN PROTOTYPE</span></div>
+      <p>THE TRUTH MAY BE OUT THERE. THE SNACK IS PROBABLY HERE.</p>
+    </footer>
+  </main>
+
+  <div class="modal" id="postModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="postModalTitle">
+    <div class="modal__backdrop" data-close-modal></div>
+    <article class="modal__window dossier">
+      <button class="modal__close" type="button" data-close-modal aria-label="닫기">×</button>
+      <div id="postModalContent"></div>
+    </article>
+  </div>
+
+  <div class="modal" id="composerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="composerTitle">
+    <div class="modal__backdrop" data-close-composer></div>
+    <article class="modal__window composer-window">
+      <button class="modal__close" type="button" data-close-composer aria-label="닫기">×</button>
+      <p class="mono-label">REPORT A NEW THEORY</p>
+      <h2 id="composerTitle">새로운 제보 등록</h2>
+      <p class="composer-intro">이 기록은 데모상 현재 브라우저에만 저장됩니다. 다른 방문자에게 실제로 전송되지는 않습니다.</p>
+      <form id="composerForm">
+        <div class="form-grid">
+          <label><span>관련 제품</span><select name="product" required><option value="새우깡">새우깡</option><option value="신라면">신라면</option><option value="짜파게티">짜파게티</option><option value="너구리">너구리</option><option value="기타">기타</option></select></label>
+          <label><span>사건 발생 장소</span><input name="location" maxlength="32" placeholder="예: 회사 탕비실" required /></label>
+        </div>
+        <label><span>사건 제목</span><input name="title" maxlength="70" placeholder="예: 매주 화요일 신라면이 한 봉지씩 사라집니다" required /></label>
+        <label><span>목격 내용</span><textarea name="report" maxlength="420" rows="5" placeholder="발견한 상황을 최대한 진지하게 기록하세요." required></textarea></label>
+        <label><span>나의 가설</span><textarea name="theory" maxlength="280" rows="4" placeholder="우연이 아니라면 어떤 이유라고 생각합니까?" required></textarea></label>
+        <div class="composer-actions"><button class="secondary-button" type="button" data-close-composer>취소</button><button class="terminal-button terminal-button--solid" type="submit">[ 제보 등록 ]</button></div>
+      </form>
+    </article>
+  </div>
+
+  <div class="modal" id="caseZeroModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="caseZeroTitle">
+    <div class="modal__backdrop" data-close-zero></div>
+    <article class="modal__window case-zero-window">
+      <button class="modal__close" type="button" data-close-zero aria-label="닫기">×</button>
+      <p class="mono-label">CASE #0000 / ORIGIN UNKNOWN</p>
+      <h2 id="caseZeroTitle">이 게시판은 누가 만들었습니까?</h2>
+      <div class="redacted-copy">
+        <p>우리가 농심을 조사하고 있다고 생각했습니까?</p>
+        <button id="revealRedacted" class="redacted" type="button" aria-label="검열된 문장 열기">████████████████████████████</button>
+        <p class="hidden-reveal" id="hiddenReveal">농심이 당신의 게시물을 보고 있습니다.</p>
+      </div>
+      <div class="warning-stamp">DO NOT<br />DISTRIBUTE</div>
+    </article>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
