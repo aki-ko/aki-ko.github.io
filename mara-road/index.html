@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#210a0a" />
+  <meta name="description" content="롯데리아 마라로드 세계관을 테스트와 미니 RPG로 확장한 인터랙티브 프로토타입" />
+  <title>마라로드 입장 테스트</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient__orb ambient__orb--a"></span>
+    <span class="ambient__orb ambient__orb--b"></span>
+    <span class="ambient__grain"></span>
+  </div>
+
+  <main class="app-shell" id="app">
+    <header class="topbar">
+      <button class="brand" id="brandHome" type="button" aria-label="마라로드 시작 화면으로 이동">
+        <span class="brand__mark" aria-hidden="true">🌶</span>
+        <span class="brand__text"><b>MARA ROAD</b><small>ENTRY EXPERIENCE</small></span>
+      </button>
+      <div class="topbar__meta">
+        <span id="topStage">ENTRY GATE</span>
+        <span class="topbar__dot" aria-hidden="true"></span>
+        <span id="soundLabel">WEB PROTOTYPE</span>
+      </div>
+    </header>
+
+    <section class="screen screen--active" id="screenIntro" data-screen="intro" aria-labelledby="introTitle">
+      <div class="hero">
+        <div class="hero__city" aria-hidden="true">
+          <div class="hero__signs hero__signs--left"><i></i><i></i><i></i></div>
+          <div class="hero__signs hero__signs--right"><i></i><i></i><i></i></div>
+          <div class="hero__lanterns"><i></i><i></i><i></i><i></i></div>
+          <div class="hero__road"></div>
+          <div class="hero__gate"></div>
+        </div>
+
+        <div class="hero__content">
+          <p class="eyebrow">LOTTERIA · MARA ROAD</p>
+          <h1 id="introTitle">나는 마라로드<br /><em>어디까지 갈 수 있을까?</em></h1>
+          <p class="hero__lead">마라를 먹을 때의 행동과 취향으로<br />당신의 마라로드 등급을 확인해보세요.</p>
+
+          <div class="hero__status" aria-label="테스트 구성">
+            <span><b>04</b> QUESTIONS</span>
+            <span><b>04</b> LEVELS</span>
+            <span><b>01</b> MINI GAME</span>
+          </div>
+
+          <button class="btn btn--primary btn--hero" id="startTest" type="button">
+            <span>마라로드 입장하기</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="hero__hint">테스트 결과 캐릭터로 바로 게임을 플레이할 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="screenQuiz" data-screen="quiz" aria-labelledby="quizQuestion">
+      <div class="quiz-layout">
+        <aside class="quiz-rail" aria-label="테스트 진행 상황">
+          <p class="eyebrow">ENTRY TEST</p>
+          <div class="quiz-rail__step"><span id="questionIndexLabel">01</span><small>/ 04</small></div>
+          <div class="progress-track" aria-hidden="true"><i id="progressBar"></i></div>
+          <p id="quizRailCopy">마라로드 입구에서<br />당신의 첫 반응을 확인합니다.</p>
+          <div class="spice-meter" aria-label="현재 응답 강도">
+            <span>SPICY SIGNAL</span>
+            <div><i id="spiceSignal1"></i><i id="spiceSignal2"></i><i id="spiceSignal3"></i><i id="spiceSignal4"></i><i id="spiceSignal5"></i></div>
+          </div>
+        </aside>
+
+        <article class="quiz-card">
+          <div class="quiz-card__stamp" aria-hidden="true">CHECK<br />POINT</div>
+          <p class="quiz-card__number" id="questionNumber">QUESTION 01</p>
+          <h2 id="quizQuestion"></h2>
+          <div class="answers" id="answers" role="group" aria-label="답변 선택"></div>
+          <div class="quiz-card__footer">
+            <button class="text-btn" id="quizBack" type="button">← 이전</button>
+            <span>하나를 선택하면 다음 질문으로 이동합니다.</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen" id="screenResult" data-screen="result" aria-labelledby="resultTitle">
+      <div class="result-layout">
+        <div class="result-portrait-wrap">
+          <div class="result-aura" aria-hidden="true"></div>
+          <img class="result-portrait" id="resultPortrait" alt="" />
+          <div class="result-seal" id="resultSeal" aria-hidden="true">ENTRY<br />APPROVED</div>
+        </div>
+
+        <article class="result-card" id="residentCard">
+          <p class="eyebrow">MARA ROAD RESIDENT CARD</p>
+          <div class="result-card__heading">
+            <div>
+              <span class="level-chip" id="resultLevel">LEVEL 01</span>
+              <h2 id="resultTitle">마라로드 관광객</h2>
+            </div>
+            <span class="result-card__code" id="resultCode">VISITOR</span>
+          </div>
+
+          <p class="result-description" id="resultDescription"></p>
+
+          <dl class="result-stats">
+            <div><dt>STATUS</dt><dd id="resultStatus">VISITOR</dd></div>
+            <div><dt>SPICY TOLERANCE</dt><dd><span class="tolerance" id="toleranceBars" aria-label="매운맛 적응도"></span></dd></div>
+            <div><dt>ENTRY ROUTE</dt><dd id="resultRoute">GATE 01</dd></div>
+          </dl>
+
+          <div class="result-actions">
+            <button class="btn btn--primary" id="enterGame" type="button">이 캐릭터로 마라로드 입장하기 <span aria-hidden="true">→</span></button>
+            <button class="btn btn--ghost" id="shareTest" type="button">내 친구의 마라로드 레벨도 확인하기</button>
+            <button class="text-btn" id="restartTest" type="button">테스트 다시 하기</button>
+          </div>
+          <p class="share-feedback" id="shareFeedback" role="status" aria-live="polite"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen" id="screenGame" data-screen="game" aria-labelledby="gameTitle">
+      <div class="game-top">
+        <div>
+          <p class="eyebrow">MARA ROAD · SPICE ALLEY</p>
+          <h2 id="gameTitle">마라로드 첫 심부름</h2>
+        </div>
+        <div class="game-top__actions">
+          <button class="btn btn--compact btn--ghost" id="gameHelp" type="button">조작법</button>
+          <button class="btn btn--compact btn--ghost" id="exitGame" type="button">결과로 돌아가기</button>
+        </div>
+      </div>
+
+      <div class="game-layout">
+        <aside class="game-hud">
+          <div class="hud-profile">
+            <img id="hudPortrait" alt="" />
+            <div><span id="hudLevel">LEVEL 01</span><b id="hudName">관광객</b></div>
+          </div>
+
+          <div class="quest-box">
+            <p>ACTIVE QUEST</p>
+            <h3 id="questTitle">마라로드 표식 수집</h3>
+            <p id="questCopy"></p>
+            <div class="quest-progress"><span id="questProgressText">0 / 3</span><div><i id="questProgressBar"></i></div></div>
+          </div>
+
+          <div class="inventory-box">
+            <p>INVENTORY</p>
+            <div class="inventory-slot" id="inventorySlots" aria-label="수집한 아이템"></div>
+          </div>
+        </aside>
+
+        <div class="game-stage-wrap">
+          <div class="game-stage" id="gameStage" tabindex="0" role="application" aria-label="마라로드 미니 게임 맵">
+            <div class="map-grid" id="mapGrid" aria-hidden="true"></div>
+            <div class="map-props" id="mapProps" aria-hidden="true"></div>
+            <div class="player" id="player" aria-label="플레이어 캐릭터"></div>
+            <div class="interact-hint" id="interactHint" aria-hidden="true">SPACE</div>
+          </div>
+
+          <div class="mobile-controls" aria-label="터치 이동 버튼">
+            <span></span><button type="button" data-move="up" aria-label="위로 이동">↑</button><span></span>
+            <button type="button" data-move="left" aria-label="왼쪽으로 이동">←</button><button type="button" id="interactMobile" aria-label="대화 또는 조사">●</button><button type="button" data-move="right" aria-label="오른쪽으로 이동">→</button>
+            <span></span><button type="button" data-move="down" aria-label="아래로 이동">↓</button><span></span>
+          </div>
+        </div>
+
+        <aside class="dialogue-panel">
+          <p class="dialogue-panel__label" id="dialogueSpeaker">안내 표지판</p>
+          <div class="dialogue-panel__body" id="dialogueText" aria-live="polite"></div>
+          <button class="btn btn--compact btn--primary" id="interactButton" type="button">조사하기</button>
+          <p class="dialogue-panel__tip">키보드: 방향키/WASD 이동 · Space 대화/조사</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="gameModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop"></div>
+    <article class="modal__card">
+      <button class="modal__close" id="closeModal" type="button" aria-label="닫기">×</button>
+      <p class="eyebrow">MARA ROAD · QUEST CLEAR</p>
+      <h2 id="modalTitle">첫 심부름 완료!</h2>
+      <div class="modal__portrait" id="modalSprite"></div>
+      <p id="modalCopy"></p>
+      <div class="modal__reward"><span>획득</span><b>마라로드 입장 스탬프 × 1</b></div>
+      <button class="btn btn--primary" id="playAgain" type="button">한 번 더 둘러보기</button>
+      <button class="text-btn" id="backToResultFromModal" type="button">결과 카드로 돌아가기</button>
+    </article>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
